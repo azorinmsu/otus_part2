@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+name: spring-application-config
+data:
+  application.properties: |
+    server.port=8000
+    spring.data.mongodb.database=${MONGO_DATABASE}
+    spring.data.mongodb.port=${MONGO_PORT}
+    spring.data.mongodb.password=${MONGO_PASSWORD}
+    spring.data.mongodb.username=${MONGO_USERNAME}

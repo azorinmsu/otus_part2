@@ -30,3 +30,31 @@ spec:
           httpGet:
             path: /health
             port: 8000
+        env:
+          - name: MONGO_DATABASE
+            valueFrom:
+              secretKeyRef:
+                name: spring-security
+                key: spring.mongo.dbname
+          - name: MONGO_PORT
+            valueFrom:
+              secretKeyRef:
+                name: spring-security
+                key: spring.mongo.port
+          - name: MONGO_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: spring-security
+                key: spring.mongo.password
+          - name: MONGO_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: spring-security
+                key: spring.mongo.username
+        volumeMounts:
+        - name: spring-application-config
+          mountPath: /config
+      volumes:
+      - name: spring-application-config
+        configMap:
+          name: spring-application-config
