@@ -2,8 +2,7 @@
 1. ```kubectl create namespace m && helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx/ && helm repo update && helm install nginx ingress-nginx/ingress-nginx --namespace m -f ingress/nginx-ingress.yaml```
 2. ```
    helm repo add bitnami https://charts.bitnami.com/bitnami && helm install my-release --namespace m  \
-    --set auth.username=otus,auth.password=otus,auth.database=mongo,resources.limits.cpu=800m,resources.limits.memory=512Mi,resources.requests.cpu=800m,resources.requests.memory=512Mi \
-    bitnami/mongodb
+   bitnami/mongodb -f mongodb/values.yaml
    ```
 3. ```
    kubectl create secret generic --namespace m spring-security \
