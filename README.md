@@ -6,9 +6,9 @@
    ```
 3. ```
    kubectl create secret generic --namespace m spring-security \
-   --from-literal=spring.mongo.dbname=mongo \
-   --from-literal=spring.mongo.password=otus \
-   --from-literal=spring.mongo.username=otus --from-literal=spring.mongo.port=27017 
+   --from-literal=spring.mongo.dbname=otus \
+   --from-literal=spring.mongo.password=12345 \
+   --from-literal=spring.mongo.username=test --from-literal=spring.mongo.port=27017 
    ```
 4. ```kubectl apply -f manifests/ ```
 

@@ -1,17 +1,12 @@
-mongodb:
-  enabled: true
-  persistence:
-    enabled: true
   auth:
-    enabled: true
-    username: "otus"
-    rootPassword: "otus"
-    password: "otus"
-    database: "mongo"
+    rootPassword: "admin"
+    username: "test"
+    password: "12345"
+    database: "otus"
   resources:
     limits:
-      cpu: 800m
-      memory: 512Mi
+      cpu: 1000m
+      memory: 1Gi
     requests:
-      cpu: 800m
+      cpu: 600m
       memory: 512Mi

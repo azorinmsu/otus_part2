@@ -25,14 +25,23 @@ spec:
           httpGet:
             path: /health
             port: 8000
-          initialDelaySeconds: 30
-          periodSeconds: 10
+          initialDelaySeconds: 60
+          periodSeconds: 30
+          failureThreshold: 10
         readinessProbe:
           httpGet:
             path: /health
             port: 8000
-          initialDelaySeconds: 30
-          periodSeconds: 10
+          initialDelaySeconds: 60
+          periodSeconds: 30
+          failureThreshold: 10
+        resources:
+          requests:
+            memory: "550Mi"
+            cpu: "500m"
+          limits:
+            memory: "1Gi"
+            cpu: "600m"
         env:
           - name: MONGO_DATABASE
             valueFrom:
